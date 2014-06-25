@@ -7,6 +7,7 @@ var annotatorPass = exports.annotator = require('./passes/annotator');
 var pdoAnnotatorPass = exports.pdo = require('./passes/pdo');
 var ddoAnnotatorPass = exports.ddo = require('./passes/ddo');
 var routeAnnotatorPass = exports.route = require('./passes/route');
+var injectorAnnotatorPass = exports.injector = require('./passes/injector');
 
 // expose a convenience function to register all of the passes
 module.exports = function (astral) {
@@ -16,7 +17,8 @@ module.exports = function (astral) {
     refPass,
     pdoAnnotatorPass,
     ddoAnnotatorPass,
-    routeAnnotatorPass
+    routeAnnotatorPass,
+    injectorAnnotatorPass
   ].forEach(function (pass) {
     astral.register(pass);
   });
